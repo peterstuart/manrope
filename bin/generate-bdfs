@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+rm -rf bdfs
+mkdir bdfs
+
+declare -a FontNames=(
+    "Manrope-ExtraLight"
+    "manrope-bold"
+    "manrope-extrabold"
+    "manrope-light"
+    "manrope-medium"
+    "manrope-regular"
+    "manrope-semibold"
+)
+
+for name in ${FontNames[@]}; do
+    echo "Generating BDFs for $name..."
+    
+    for size in {6..80..1}
+    do
+        output_name=$(echo "$name" | tr '[:upper:]' '[:lower:]')-$size.bdf
+        otf2bdf manrope/fonts/otf/$name.otf -p $size -l "32_255 " -o bdfs/$output_name
+    done
+done
+

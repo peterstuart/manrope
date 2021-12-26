@@ -1,0 +1,20 @@
+[package]
+name = "manrope"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+eg-bdf = { git = "https://github.com/embedded-graphics/bdf", rev = "1e5a7f9" }
+embedded-graphics = "0.7.1"
+manrope_macros = { path = "manrope_macros" }
+
+[features]
+default = ["regular"]
+all = ["bold", "extrabold", "extralight", "light", "medium", "regular", "semibold"]
+bold = []
+extrabold = []
+extralight = []
+light = []
+medium = []
+regular = []
+semibold = []
