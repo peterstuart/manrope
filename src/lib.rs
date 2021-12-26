@@ -16,7 +16,7 @@ pub mod extrabold {
 pub mod extralight {
     use manrope_macros::generate_fonts;
 
-    generate_fonts!("manrope-ExtraLight", 6, 80);
+    generate_fonts!("manrope-extralight", 6, 80);
 }
 
 #[cfg(feature = "light")]
