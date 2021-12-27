@@ -1,3 +1,5 @@
+#![no_std]
+
 #[cfg(feature = "bold")]
 pub mod bold {
     use manrope_macros::generate_fonts;
